@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>漂流瓶</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('./plp.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    h1 {
+      font-size: 80px;
+      color:  rgb(70, 100, 180);
+      text-align: center;
+      margin-bottom: 30px;
+      color: #4765d4;
+    }
+
+    form {
+      background-color: rgba(225, 225, 225, 0.01);
+      border-radius: 10px;
+      width: 80%;
+      padding: 45px;
+      align-items: center;
+      flex-direction: column;
+      background-color: #ffffff49;
+      border-radius: 50px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5) inset;
+      transform: translateY(3px);
+    }
+
+    label {
+      font-size: 50px;
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #2db8cd;
+    }
+
+    input[type="text"],
+    textarea {
+      font-size: 40px;
+      width: 100%;
+      padding: 50px;
+      background-color: rgba(225, 225, 225, 0.01);
+      color:  rgb(42, 86, 206);
+      border-radius: 5px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #3e549a;
+      border: 1px solid #333;
+      box-sizing: border-box;
+    }
+
+    button {
+      font-size: 40px;
+      padding: 15px 30px;
+      background-color: rgba(225, 225, 225, 0.01);
+      border-color: #333;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #3699db;
+    }
+
+    #receivedBottles {
+      font-size: 50px;
+      padding: 20px;
+      background-color: rgba(225, 225, 225, 0.01);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none;
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #7443e5;
+
+    }
+
+    #mailbox {
+      font-size: 50px;
+      padding: 20px;
+      background-color: rgba(225, 225, 225, 0.01);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none;
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #7443e5;
+      
+    }
+
+    #options {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #options div {
+      padding: 10px 20px;
+      font-size: 65px;
+      font-weight: bold;
+      border: 2px solid;
+      border-radius:48%;
+      border-image-slice: 1;
+      font-family: 'Courier New', Courier, monospace;
+      color: #000000;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #66b5ba;
+    }
+
+    #chatBox {
+      width: 98%;
+      margin: 0 auto;
+      height: 300px;
+      overflow-y: scroll;
+      padding: 20px;
+      background-color: rgba(225, 225, 225, 0.01);
+      border-radius: 10px;
+      font-size: 45px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(51, 90, 197);
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #7443e5;
+    }
+    #sendMessageContainer {
+    position: relative;
+    left: 60%;
+    transform: translateX(-50%);
+}
+
+  </style>
+</head>
+
+<body>
+  <h1>漂流瓶</h1>
+
+  <div id="options">
+    <div onclick="showMailbox()">信箱</div>
+    <div onclick="showSendMessage()">写信</div>
+    <div onclick="showReceivedMessage()">看信</div>
+  </div>
+
+  <div id="sendMessageContainer">
+    <form id="sendBottleForm">
+      <label for="username">用户名：</label><input type="text" id="username" required>
+      <textarea id="message" placeholder="输入您的漂流瓶内容"></textarea>
+      <button type="submit">发送漂流瓶</button>
+    </form>
+  </div>
+
+  <div id="receivedBottles">
+    随机收到的漂流瓶信息：
+  </div>
+
+  <div id="mailbox">
+    信箱中的所有信件内容：
+  </div>
+
+  <div id="chatBox"></div>
+
+  <script>
+    function showSendMessage() {
+      document.getElementById('sendMessageContainer').style.display = 'block';
+      document.getElementById('receivedBottles').style.display = 'none';
+      document.getElementById('mailbox').style.display = 'none';
+    }
+
+    function showReceivedMessage() {
+      document.getElementById('receivedBottles').style.display = 'block';
+      document.getElementById('sendMessageContainer').style.display = 'none';
+      document.getElementById('mailbox').style.display = 'none';
+    }
+
+    function showMailbox() {
+      document.getElementById('mailbox').style.display = 'block';
+      document.getElementById('sendMessageContainer').style.display = 'none';
+      document.getElementById('receivedBottles').style.display = 'none';
+    }
+
+    // 发送漂流瓶的函数
+    function sendBottle() {
+      const username = document.getElementById('username').value;
+      const message = document.getElementById('message').value;
+      // 模拟将消息添加到交流区域
+      const chatMessage = `<div><strong>${username}:</strong> ${message}</div>`;
+      document.getElementById('chatBox').innerHTML += chatMessage;
+      // 清空输入框
+      document.getElementById('username').value = '';
+      document.getElementById('message').value = '';
+    }
+
+    // 表单提交事件处理
+    document.getElementById('sendBottleForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendBottle();
+    });
+
+     // 接收漂流瓶的模拟函数
+     function receiveBottle() {
+      // 这里模拟从后端获取漂流瓶内容
+      const bottleMessage = '这是一个收到的漂流瓶消息';
+      const div = document.createElement('div');
+      div.innerHTML = bottleMessage;
+      document.getElementById('receivedBottles').appendChild(div);
+    }
+
+    // 定时模拟接收漂流瓶
+    setInterval(receiveBottle, 5000);
+  </script>
+</body>
+
+</html>

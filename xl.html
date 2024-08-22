@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心理压力量表(CPSS)</title>
+  <style>
+    body {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      text-align: left;
+      background-image: linear-gradient(to top, #aadaee 0%, #fbc8d4 100%);
+    }
+
+    h1 {
+      color: #3498db;
+      font-family: fantasy;
+      text-align: center;
+      font-size: 46px;
+      margin-top: 50px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    form {
+      width: 50%;
+      margin: 0 auto;
+      border: 3px solid #3498db;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    p label {
+      font-size: 30px;
+      color: #555;
+    }
+
+    p {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    #next1, #next2, #next3, #next4, #next5, #next6, #next7, #next8, #next9,#next10,#next11,#next12,#next13 {
+      background-color: #0fcbf1;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 15px;
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #result {
+      width: 50%;
+      margin: 0 auto;
+      padding: 30px;
+      border: 3px solid #97d3e3;
+      background-color: #fff;
+      display: none;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #result h2 {
+      color: #4CAF50;
+      font-size: 28px;
+    }
+
+    #result p {
+      color: #333;
+      font-size: 20px;
+    }
+
+    #submitBtn {
+      background-color: #bc4f43;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>心理压力量表(CPSS)</h1>
+  <div id="scrollText" style="position: absolute; bottom: 20px; width: 100%; padding: 10px; border: 2px solid #8ba2a3; background-color: #e6fbff; border-radius: 10px;">
+    <marquee behavior="scroll" direction="left" scrollamount="10" style="font-size: 20px; color: #4b4bec; font-weight: bold; letter-spacing: 2px; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">答案无好坏之分，追随自己内心感受，相信第一感觉~</marquee>
+  </div>
+
+  <form action="">
+    <div id="question1">
+      <p>
+        <label>1.为一些预料之外事情的发生而感到不安。</label><br>
+        <input type="radio" name="q1" value="从来没有">从来没有<br>
+        <input type="radio" name="q1" value="极少有">极少有<br>
+        <input type="radio" name="q1" value="有时有">有时有<br>
+        <input type="radio" name="q1" value="经常有">经常有<br>
+        <input type="radio" name="q1" value="很多">很多<br>
+      </p>
+      <button type="button" id="next1">下一题</button>
+    </div>
+    
+    <div id="question2" style="display: none;">
+      <p>
+        <label>2. 感觉到不能控制生活中的重要事情。</label><br>
+        <input type="radio" name="q2" value="从来没有">从来没有<br>
+        <input type="radio" name="q2" value="极少有">极少有<br>
+        <input type="radio" name="q2" value="有时有">有时有<br>
+        <input type="radio" name="q2" value="经常有">经常有<br>
+        <input type="radio" name="q2" value="很多">很多<br>
+      </p>
+      <button type="button" id="next2">下一题</button>
+    </div>
+    
+    <div id="question3" style="display: none;">
+      <p>
+        <label>3. 感觉到紧张和压力。</label><br>
+        <input type="radio" name="q3" value="从来没有">从来没有<br>
+        <input type="radio" name="q3" value="极少有">极少有<br>
+        <input type="radio" name="q3" value="有时有">有时有<br>
+        <input type="radio" name="q3" value="经常有">经常有<br>
+        <input type="radio" name="q3" value="很多">很多<br>
+      </p>
+      <button type="button" id="next3">下一题</button>
+    </div>
+    
+    <div id="question4" style="display: none;">
+      <p>
+        <label>4. 能成功地处理生活中令人烦恼的事情。</label><br>
+        <input type="radio" name="q4" value="从来没有">从来没有<br>
+        <input type="radio" name="q4" value="极少有">极少有<br>
+        <input type="radio" name="q4" value="有时有">有时有<br>
+        <input type="radio" name="q4" value="经常有">经常有<br>
+        <input type="radio" name="q4" value="很多">很多<br>
+      </p>
+      <button type="button" id="next4">下一题</button>
+    </div>
+    
+    <div id="question5" style="display: none;">
+      <p>
+        <label>5. 感觉到能有效地处理生活中发生的重要变化。</label><br>
+        <input type="radio" name="q5" value="从来没有">从来没有<br>
+        <input type="radio" name="q5" value="极少有">极少有<br>
+        <input type="radio" name="q5" value="有时有">有时有<br>
+        <input type="radio" name="q5" value="经常有">经常有<br>
+        <input type="radio" name="q5" value="很多">很多<br>
+      </p>
+      <button type="button" id="next5">下一题</button>
+    </div>
+    
+    <div id="question6" style="display: none;">
+      <p>
+        <label>6. 感觉到有信心能够处理好自己的问题。</label><br>
+        <input type="radio" name="q6" value="从来没有">从来没有<br>
+        <input type="radio" name="q6" value="极少有">极少有<br>
+        <input type="radio" name="q6" value="有时有">有时有<br>
+        <input type="radio" name="q6" value="经常有">经常有<br>
+        <input type="radio" name="q6" value="很多">很多<br>
+      </p>
+      <button type="button" id="next6">下一题</button>
+    </div>
+    
+    <div id="question7" style="display: none;">
+      <p>
+        <label>7. 感觉到事情在按照自己的意愿发展。</label><br>
+        <input type="radio" name="q7" value="从来没有">从来没有<br>
+        <input type="radio" name="q7" value="极少有">极少有<br>
+        <input type="radio" name="q7" value="有时有">有时有<br>
+        <input type="radio" name="q7" value="经常有">经常有<br>
+        <input type="radio" name="q7" value="很多">很多<br>
+      </p>
+      <button type="button" id="next7">下一题</button>
+    </div>
+    
+    <div id="question8" style="display: none;">
+      <p>
+        <label>8. 发现不能完成自己必须要做的事情。</label><br>
+        <input type="radio" name="q8" value="从来没有">从来没有<br>
+        <input type="radio" name="q8" value="极少有">极少有<br>
+        <input type="radio" name="q8" value="有时有">有时有<br>
+        <input type="radio" name="q8" value="经常有">经常有<br>
+        <input type="radio" name="q8" value="很多">很多<br>
+      </p>
+      <button type="button" id="next8">下一题</button>
+    </div>
+    
+    <div id="question9" style="display: none;">
+      <p>
+        <label>9. 能够解决生活中令人不快的事。</label><br>
+        <input type="radio" name="q9" value="从来没有">从来没有<br>
+        <input type="radio" name="q9" value="极少有">极少有<br>
+        <input type="radio" name="q9" value="有时有">有时有<br>
+        <input type="radio" name="q9" value="经常有">经常有<br>
+        <input type="radio" name="q9" value="很多">很多<br>
+      </p>
+      <button type="button" id="next9">下一题</button>
+    </div>
+    
+    <div id="question10" style="display: none;">
+      <p>
+        <label>10. 感觉到能够控制自己生活中的事情。</label><br>
+        <input type="radio" name="q10" value="从来没有">从来没有<br>
+        <input type="radio" name="q10" value="极少有">极少有<br>
+        <input type="radio" name="q10" value="有时有">有时有<br>
+        <input type="radio" name="q10" value="经常有">经常有<br>
+        <input type="radio" name="q10" value="很多">很多<br>
+      </p>
+      <button type="button" id="next10">下一题</button>
+    </div>
+
+    <div id="question11" style="display: none;">
+      <p>
+        <label>11. 为发生了一些自己无法控制的事情而感到气愤。</label><br>
+        <input type="radio" name="q11" value="从来没有">从来没有<br>
+        <input type="radio" name="q11" value="极少有">极少有<br>
+        <input type="radio" name="q11" value="有时有">有时有<br>
+        <input type="radio" name="q11" value="经常有">经常有<br>
+        <input type="radio" name="q11" value="很多">很多<br>
+      </p>
+      <button type="button" id="next11">下一题</button>
+    </div>
+
+    <div id="question12" style="display: none;">
+        <p>
+          <label>12. 发觉自己在惦记着一些必须要完成的事情。</label><br>
+          <input type="radio" name="q12" value="从来没有">从来没有<br>
+          <input type="radio" name="q12" value="极少有">极少有<br>
+          <input type="radio" name="q12" value="有时有">有时有<br>
+          <input type="radio" name="q12" value="经常有">经常有<br>
+          <input type="radio" name="q12" value="很多">很多<br>
+        </p>
+        <button type="button" id="next12">下一题</button>
+      </div>
+
+      <div id="question13" style="display: none;">
+        <p>
+          <label>13. 感觉到能够控制如何使用自己的时间。</label><br>
+          <input type="radio" name="q13" value="从来没有">从来没有<br>
+          <input type="radio" name="q13" value="极少有">极少有<br>
+          <input type="radio" name="q13" value="有时有">有时有<br>
+          <input type="radio" name="q13" value="经常有">经常有<br>
+          <input type="radio" name="q13" value="很多">很多<br>
+        </p>
+        <button type="button" id="next13">下一题</button>
+      </div>
+
+    <div id="question14" style="display: none;">
+      <p>
+        <label>14. 感觉到问题在不断积累而不能得到解决。</label><br>
+        <input type="radio" name="q14" value="从来没有">从来没有<br>
+        <input type="radio" name="q14" value="极少有">极少有<br>
+        <input type="radio" name="q14" value="有时有">有时有<br>
+        <input type="radio" name="q14" value="经常有">经常有<br>
+        <input type="radio" name="q14" value="很多">很多<br>
+      </p>
+      <button type="submit" id="submitBtn">提交</button>
+    </div>
+  </form>
+      
+  <div id="result">
+    <h2>评估结果</h2>
+    <p id="resultText"></p>
+  </div>
+
+  <div id="result">
+    <h2>评估结果</h2>
+    <p id="resultText"></p>
+  </div>
+
+  <script>
+    function showNextQuestion(currentQuestionId, nextQuestionId) {
+      document.getElementById(currentQuestionId).style.display = 'none';
+      document.getElementById(nextQuestionId).style.display = 'block';
+    }
+
+    document.getElementById('next1').addEventListener('click', () => {
+      showNextQuestion('question1', 'question2');
+    });
+
+    document.getElementById('next2').addEventListener('click', () => {
+      showNextQuestion('question2', 'question3');
+    });
+
+    document.getElementById('next3').addEventListener('click', () => {
+      showNextQuestion('question3', 'question4');
+    });
+
+    document.getElementById('next4').addEventListener('click', () => {
+      showNextQuestion('question4', 'question5');
+    });
+
+    document.getElementById('next5').addEventListener('click', () => {
+      showNextQuestion('question5', 'question6');
+    });
+
+    document.getElementById('next6').addEventListener('click', () => {
+      showNextQuestion('question6', 'question7');
+    });
+
+    document.getElementById('next7').addEventListener('click', () => {
+      showNextQuestion('question7', 'question8');
+    });
+
+    document.getElementById('next8').addEventListener('click', () => {
+      showNextQuestion('question8', 'question9');
+    });
+
+    document.getElementById('next9').addEventListener('click', () => {
+      showNextQuestion('question9', 'question10');
+    });
+
+    document.getElementById('next10').addEventListener('click', () => {
+      showNextQuestion('question10', 'question11');
+    });
+
+    document.getElementById('next11').addEventListener('click', () => {
+      showNextQuestion('question11', 'question12');
+    });
+
+    document.getElementById('next12').addEventListener('click', () => {
+      showNextQuestion('question12', 'question13');
+    });
+
+    document.getElementById('next13').addEventListener('click', () => {
+      showNextQuestion('question13', 'question14');
+    });
+
+
+    const form = document.querySelector('form');
+    const resultDiv = document.getElementById('result');
+    const resultText = document.getElementById('resultText');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let score = 0;
+
+      const q1 = document.querySelector('input[name="q1"]:checked').value;
+      const q2 = document.querySelector('input[name="q2"]:checked').value;
+      const q3 = document.querySelector('input[name="q3"]:checked').value;
+      const q4 = document.querySelector('input[name="q4"]:checked').value;
+      const q5 = document.querySelector('input[name="q5"]:checked').value;
+      const q6 = document.querySelector('input[name="q6"]:checked').value;
+      const q7 = document.querySelector('input[name="q7"]:checked').value;
+      const q8 = document.querySelector('input[name="q8"]:checked').value;
+      const q9 = document.querySelector('input[name="q9"]:checked').value;
+      const q10 = document.querySelector('input[name="q10"]:checked').value;
+      const q11 = document.querySelector('input[name="q11"]:checked').value;
+      const q12 = document.querySelector('input[name="q12"]:checked').value;
+      const q13 = document.querySelector('input[name="q13"]:checked').value;
+      const q14 = document.querySelector('input[name="q14"]:checked').value;
+      
+      if (q1 === '很多') {
+        score += 5;
+      } else if (q1 === '经常有') {
+        score += 4;
+      } else if (q1 === '有时有') {
+        score += 3;
+      } else if (q1 === '极少有') {
+        score += 2;
+      } else if (q1 === '从来没有') {
+        score += 1;
+      }
+
+      if (q2 === '很多') {
+        score += 5;
+      } else if (q2 === '经常有') {
+        score += 4;
+      } else if (q2 === '有时有') {
+        score += 3;
+      } else if (q2 === '极少有') {
+        score += 2;
+      } else if (q2 === '从来没有') {
+        score += 1;
+      }
+
+      if (q3 === '很多') {
+        score += 5;
+      } else if (q3 === '经常有') {
+        score += 4;
+      } else if (q3 === '有时有') {
+        score += 3;
+      } else if (q3 === '极少有') {
+        score += 2;
+      } else if (q3 === '从来没有') {
+        score += 1;
+      }
+
+      if (q4 === '很多') {
+        score += 1;
+      } else if (q4 === '经常有') {
+        score += 2;
+      } else if (q4 === '有时有') {
+        score += 3;
+      } else if (q4 === '极少有') {
+        score += 4;
+      } else if (q4 === '从来没有') {
+        score += 5;
+      }
+
+      if (q5 === '很多') {
+        score += 1;
+      } else if (q5 === '经常有') {
+        score += 2;
+      } else if (q5 === '有时有') {
+        score += 3;
+      } else if (q5 === '极少有') {
+        score += 4;
+      } else if (q5 === '从来没有') {
+        score += 5;
+      }
+
+
+      if (q6 === '很多') {
+        score += 1;
+      } else if (q6 === '经常有') {
+        score += 2;
+      } else if (q6 === '有时有') {
+        score += 3;
+      } else if (q6 === '极少有') {
+        score += 4;
+      } else if (q6=== '从来没有') {
+        score += 5;
+      }
+
+      if (q7 === '很多') {
+        score += 1;
+      } else if (q7 === '经常有') {
+        score += 2;
+      } else if (q7 === '有时有') {
+        score += 3;
+      } else if (q7 === '极少有') {
+        score += 4;
+      } else if (q7=== '从来没有') {
+        score += 5;
+      }
+
+      if (q8 === '很多') {
+        score += 5;
+      } else if (q8 === '经常有') {
+        score += 4;
+      } else if (q8 === '有时有') {
+        score += 3;
+      } else if (q8 === '极少有') {
+        score += 2;
+      } else if (q8 === '从来没有') {
+        score += 1;
+      }
+
+      if (q9 === '很多') {
+        score += 1;
+      } else if (q9 === '经常有') {
+        score += 2;
+      } else if (q9 === '有时有') {
+        score += 3;
+      } else if (q9 === '极少有') {
+        score += 4;
+      } else if (q9 === '从来没有') {
+        score += 5;
+      }
+
+      if (q10 === '很多') {
+        score += 1;
+      } else if (q10 === '经常有') {
+        score += 2;
+      } else if (q10 === '有时有') {
+        score += 3;
+      } else if (q10 === '极少有') {
+        score += 4;
+      } else if (q10 === '从来没有') {
+        score += 5;
+      }
+
+      if (q11 === '很多') {
+        score += 5;
+      } else if (q11 === '经常有') {
+        score += 4;
+      } else if (q11 === '有时有') {
+        score += 3;
+      } else if (q11 === '极少有') {
+        score += 2;
+      } else if (q11 === '从来没有') {
+        score += 1;
+      }
+
+      if (q12 === '很多') {
+        score += 5;
+      } else if (q12 === '经常有') {
+        score += 4;
+      } else if (q12 === '有时有') {
+        score += 3;
+      } else if (q12 === '极少有') {
+        score += 2;
+      } else if (q12 === '从来没有') {
+        score += 1;
+      }
+
+      if (q13 === '很多') {
+        score += 1;
+      } else if (q13 === '经常有') {
+        score += 2;
+      } else if (q13 === '有时有') {
+        score += 3;
+      } else if (q13 === '极少有') {
+        score += 4;
+      } else if (q13 === '从来没有') {
+        score += 5;
+      }
+
+      if (q14 === '很多') {
+        score += 5;
+      } else if (q14 === '经常有') {
+        score += 4;
+      } else if (q14 === '有时有') {
+        score += 3;
+      } else if (q14 === '极少有') {
+        score += 2;
+      } else if (q14 === '从来没有') {
+        score += 1;
+      }
+
+      if (score <= 28) {
+        resultText.innerHTML = '知觉到的压力较低，个体对当前生活有足够的掌控和控制，不会因为无法预期的事情发生而感到心烦意乱和惊慌失措。建议您继续保持积极乐观的心态，合理规划生活和工作，避免过度劳累。可以定期进行一些自己喜欢的放松和休闲活动，比如阅读、旅行、听音乐等，这有助于进一步提升您的心理幸福感。同时，保持良好的作息习惯，保证充足的睡眠，为每一天注入充沛的精力。';
+      } else if (score <= 42) {
+        resultText.innerHTML = '知觉到的压力适中，生活中的兴奋与压力量适中，偶尔会有一段时间压力太多，但个体有能力去享受压力，并且很快地回到平静状态。建议您首先仔细审视生活中的压力源，是工作任务过重、人际关系复杂，还是其他方面的问题。然后，尝试为自己制定明确的应对计划，将大的任务分解成小的、可管理的部分。增加运动量，如每周进行几次有氧运动，如跑步、游泳或骑自行车，这可以促进身体分泌内啡肽，改善心情。此外，积极参与社交活动，与亲朋好友交流分享，能获得情感支持和新的视角。';
+      } else if (score <= 56) {
+        resultText.innerHTML = '知觉到的压力较高，可能对个体的身心健康造成负面影响，需要采取措施加以调节,可以考虑寻求专业心理咨询的帮助。心理咨询师能够帮助您深入剖析压力的根源，并提供针对性的应对策略。同时，学习一些有效的压力管理技巧是很有必要的，比如深呼吸练习，每天花几分钟专注于呼吸，让身心得到放松；或者尝试冥想，帮助您平静思绪，增强内心的平静和专注力。另外，合理调整工作和生活的平衡，不要给自己过高的要求和期望，学会适当的自我接纳和宽容。';
+      } else {
+        resultText.innerHTML = '知觉到的压力非常高，个体可能面临极大的压力，需要专业人员的帮助。建议您尽快咨询心理医生，他们可以通过专业的评估和治疗为您制定个性化的减压方案。同时，注意保证充足的休息，避免长时间连续工作或处于紧张状态。在饮食方面，选择营养均衡的食物，多摄入富含维生素 B、C 和矿物质的食物，如新鲜蔬菜、水果和全谷物。此外，尝试一些放松的活动，如瑜伽、温泉浴或者亲近大自然，帮助您舒缓紧张的神经。';
+      }
+  
+     
+  
+      resultDiv.style.display = 'block';
+    });
+  </script>
+
+</body>
+
+</html>
