@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大学生心理健康</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+            overflow: hidden;
+        }
+
+        /* 定义外层容器样式 */
+        .shell {
+            position: relative;
+            /* 相对定位 */
+            width: 60vw;
+            /* 宽度占视口宽度的60% */
+            height: 40vw;
+            /* 高度占视口高度的40% */
+            max-width: 380px;
+            /* 最大宽度为380像素 */
+            max-height: 250px;
+            /* 最大高度为250像素 */
+            margin: 0;
+            /* 外边距为0 */
+            color: white;
+            /* 字体颜色为白色 */
+            perspective: 1000px;
+            /* 透视效果，观察者与z=0平面的距离 */
+            transform-origin: center;
+            /* 变形原点为中心 */
+        }
+
+        /* 定义内容容器样式 */
+        .content {
+            display: flex;
+            /* 设置为弹性盒子布局 */
+            justify-content: center;
+            /* 主轴居中对齐 */
+            align-items: center;
+            /* 交叉轴居中对齐 */
+            position: absolute;
+            /* 绝对定位 */
+            width: 100%;
+            /* 宽度100% */
+            height: 100%;
+            /* 高度100% */
+            transform-origin: center;
+            /* 变形原点为中心 */
+            transform-style: preserve-3d;
+            /* 保持3D变换 */
+            transform: translateZ(-30vw) rotateY(0);
+            /* 变换：沿z轴平移-30vw，绕y轴旋转0度 */
+            animation: carousel 9s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            /* 动画：名称为carousel，持续时间9秒，无限循环，缓动函数为cubic-bezier(0.77, 0, 0.175, 1)，动画结束后保持最后状态 */
+        }
+
+        /* 定义项目样式 */
+        .item {
+            position: absolute;
+            /* 绝对定位 */
+            width: 60vw;
+            /* 宽度占视口宽度的60% */
+            height: 40vw;
+            /* 高度占视口高度的40% */
+            max-width: 380px;
+            /* 最大宽度为380像素 */
+            max-height: 250px;
+            /* 最大高度为250像素 */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            /* 设置阴影 */
+            border-radius: 6px;
+            /* 边框圆角半径为6像素 */
+            background-size: cover;
+            /* 背景图片等比例缩放并覆盖整个容器 */
+            -webkit-box-reflect: below 25px -webkit-linear-gradient(transparent 50%, rgba(255, 255, 255, 0.3));
+            /* 创建倒影效果 */
+        }
+
+        /* 第一个项目样式 */
+        .item:nth-child(1) {
+            background-image: url(./08.jpg);
+            /* 背景图片为01.jpg */
+            transform: rotateY(0) translateZ(35vw);
+            /* 变换：绕y轴旋转0度，沿z轴平移35vw */
+        }
+
+        /* 第二个项目样式 */
+        .item:nth-child(2) {
+            background-image: url(./02.jpg);
+            /* 背景图片为02.jpg */
+            transform: rotateY(120deg) translateZ(35vw);
+            /* 变换：绕y轴旋转120度，沿z轴平移35vw */
+        }
+
+        /* 第三个项目样式 */
+        .item:nth-child(3) {
+            background-image: url(./07.jpg);
+            /* 背景图片为03.jpg */
+            transform: rotateY(240deg) translateZ(35vw);
+            /* 变换：绕y轴旋转240度，沿z轴平移35vw */
+        }
+
+
+        /* 定义动画 */
+        @keyframes carousel {
+
+            0%,
+            17.5% {
+                transform: translateZ(-35vw) rotateY(0);
+                /* 变换：沿z轴平移-35vw，绕y轴旋转0度 */
+            }
+
+            27.5%,
+            45% {
+                transform: translateZ(-35vw) rotateY(-120deg);
+                /* 变换：沿z轴平移-35vw，绕y轴旋转-120度 */
+            }
+
+            55%,
+            72.5% {
+                transform: translateZ(-35vw) rotateY(-240deg);
+                /* 变换：沿z轴平移-35vw，绕y轴旋转-240度 */
+            }
+
+            82.5%,
+            100% {
+                transform: translateZ(-35vw) rotateY(-360deg);
+                /* 变换：沿z轴平移-35vw，绕y轴旋转-360度 */
+            }
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #module {
+            border: 2px solid black;
+            margin: 15px;
+            width: 550px;
+            height: 350px;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+            border-radius: 10%;
+            overflow:hidden;
+        }
+
+        #module img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10%;
+            object-fit: cover;
+        }
+
+
+        #nav {
+            position: relative;
+            border: none;
+            border-radius: 10em;
+            display: flex;
+            list-style: none;
+            background: #f5f5f5;
+            box-shadow: 20px 40px 40px #00000033;
+            padding: 10px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        #nav li a {
+            position: relative;
+            padding: 15px 50px;
+            font: 500 24px '优设标题黑';
+            border: none;
+            outline: none;
+            color: rgb(70, 100, 180);
+            display: inline-block;
+            text-decoration: none;
+            z-index: 3;
+        }
+
+        .slide1,
+        .slide2 {
+            position: absolute;
+            display: inline-block;
+            height: 60px;
+            border-radius: 10em;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
+        }
+
+        .slide1 {
+            background-color: rgb(170, 190, 255);
+            z-index: 2;
+        }
+
+        .slide2 {
+            opacity: 0;
+            background-color: rgba(170, 190, 255, .5);
+            z-index: 1;
+            box-shadow: 0 0 20px #ffffffaa inset;
+        }
+
+        .squeeze {
+            transform: scale(0.9);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <div class="content">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <ul id="nav">
+            <li class="slide1"></li>
+            <li class="slide2"></li>
+            <li><a href="./3g.html">心理测试</a></li>
+            <li><a href="./ts.html">自我调适</a></li>
+            <li><a href="./plp.html">漂流瓶</a></li>
+            <li><a href="./sd.html">树洞</a></li>
+    </ul>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $("#nav a").on("click", function () {
+            var position = $(this).parent().position();
+            var width = $(this).parent().width();
+            $("#nav .slide1").css({ opacity: 1, left: +position.left, width: width });
+    });
+    $("#nav a").on("mouseover", function () {
+            var position = $(this).parent().position();
+            var width = $(this).parent().width();
+            $("#nav .slide2").css({ opacity: 1, left: +position.left, width: width }).addClass("squeeze");
+    });
+    $("#nav a").on("mouseout", function () {
+            $("#nav .slide2").css({ opacity: 0 }).removeClass("squeeze");
+    });
+    var currentWidth = $("#nav li:nth-of-type(3) a").parent("li").width();
+    var current = $("li:nth-of-type(3) a").position();
+    $("#nav .slide1").css({ left: +current.left, width: currentWidth });
+    
+</script>
+<script>
+      // 获取图片容器
+    var module = document.getElementById('module');
+      // 获取所有图片
+    var images = module.getElementsByTagName('img');
+      // 初始索引
+    var index = 0;
+    
+      // 自动切换函数
+    function autoSlide() {
+        images[index].style.display = 'none';
+       index++;
+    if (index >= images.length) {
+        index = 0;
+    }
+        images[index].style.display = 'block';
+      }
+    
+      // 每隔 3 秒切换一次
+      setInterval(autoSlide, 3000);
+</script>
+</body>
+
+</html>
