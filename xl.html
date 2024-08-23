@@ -27,13 +27,23 @@
       margin-top: 50px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
+    #next1, #next2, #next3, #next4, #next5, #next6, #next7, #next8, #next9,#next10,#next11 ,#next12,
+    #next13,#prev2,#prev3,#prev4,#prev5,#prev6,#prev7,#prev8,#prev9,#prev10,#prev11,#prev12,#prev13,#prev14{
+      background-color: #0fcbf1;
+      color: #ffffff;
+      padding: 15px 15px;
+      border-radius: 15px;
+      font-size: 17px;
+      cursor: pointer;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    }
 
     form {
       width: 50%;
       margin: 0 auto;
       border: 3px solid #3498db;
       padding: 30px;
-      background-color: #fff;
+      background-color: rgba(225, 225, 225, 0.01);
       border-radius: 20px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
@@ -55,16 +65,6 @@
 
     input[type="radio"] {
       margin-right: 10px;
-    }
-
-    #next1, #next2, #next3, #next4, #next5, #next6, #next7, #next8, #next9,#next10,#next11,#next12,#next13 {
-      background-color: #0fcbf1;
-      color: #fff;
-      padding: 15px 30px;
-      border-radius: 15px;
-      font-size: 30px;
-      cursor: pointer;
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     }
 
     #result {
@@ -106,6 +106,10 @@
     color: rgb(70, 100, 180);
     font-size: 20px;
     } 
+    .button-container {
+    display: flex;
+    justify-content: space-between;
+}
   </style>
 </head>
 
@@ -122,7 +126,7 @@
         <input type="radio" name="q1" value="经常有">经常有<br>
         <input type="radio" name="q1" value="很多">很多<br>
       </p>
-      <button type="button" id="next1">下一题</button>
+        <button type="button" id="next1">下一题</button>
     </div>
     
     <div id="question2" style="display: none;">
@@ -134,7 +138,10 @@
         <input type="radio" name="q2" value="经常有">经常有<br>
         <input type="radio" name="q2" value="很多">很多<br>
       </p>
-      <button type="button" id="next2">下一题</button>
+      <div class="button-container">
+        <button type="button" id="prev2">上一题</button>
+        <button type="button" id="next2">下一题</button>
+      </div>
     </div>
     
     <div id="question3" style="display: none;">
@@ -146,7 +153,10 @@
         <input type="radio" name="q3" value="经常有">经常有<br>
         <input type="radio" name="q3" value="很多">很多<br>
       </p>
-      <button type="button" id="next3">下一题</button>
+      <div class="button-container">
+        <button type="button" id="prev3">上一题</button>
+        <button type="button" id="next3">下一题</button>
+      </div>
     </div>
     
     <div id="question4" style="display: none;">
@@ -158,7 +168,10 @@
         <input type="radio" name="q4" value="经常有">经常有<br>
         <input type="radio" name="q4" value="很多">很多<br>
       </p>
-      <button type="button" id="next4">下一题</button>
+      <div class="button-container">
+        <button type="button" id="prev4">上一题</button>
+        <button type="button" id="next4">下一题</button>
+      </div>
     </div>
     
     <div id="question5" style="display: none;">
@@ -170,7 +183,10 @@
         <input type="radio" name="q5" value="经常有">经常有<br>
         <input type="radio" name="q5" value="很多">很多<br>
       </p>
-      <button type="button" id="next5">下一题</button>
+      <div class="button-container">
+        <button type="button" id="prev5">上一题</button>
+        <button type="button" id="next5">下一题</button>
+      </div>
     </div>
     
     <div id="question6" style="display: none;">
@@ -182,7 +198,10 @@
         <input type="radio" name="q6" value="经常有">经常有<br>
         <input type="radio" name="q6" value="很多">很多<br>
       </p>
-      <button type="button" id="next6">下一题</button>
+      <div class="button-container">
+        <button type="button" id="prev6">上一题</button>
+        <button type="button" id="next6">下一题</button>
+      </div>
     </div>
     
     <div id="question7" style="display: none;">
@@ -194,7 +213,10 @@
         <input type="radio" name="q7" value="经常有">经常有<br>
         <input type="radio" name="q7" value="很多">很多<br>
       </p>
-      <button type="button" id="next7">下一题</button>
+      <div class="button-container">
+          <button type="button" id="prev7">上一题</button>
+          <button type="button" id="next7">下一题</button>
+      </div>
     </div>
     
     <div id="question8" style="display: none;">
@@ -206,7 +228,10 @@
         <input type="radio" name="q8" value="经常有">经常有<br>
         <input type="radio" name="q8" value="很多">很多<br>
       </p>
-      <button type="button" id="next8">下一题</button>
+      <div class="button-container">
+          <button type="button" id="prev8">上一题</button>
+          <button type="button" id="next8">下一题</button>
+      </div>
     </div>
     
     <div id="question9" style="display: none;">
@@ -218,7 +243,10 @@
         <input type="radio" name="q9" value="经常有">经常有<br>
         <input type="radio" name="q9" value="很多">很多<br>
       </p>
-      <button type="button" id="next9">下一题</button>
+      <div class="button-container">
+          <button type="button" id="prev9">上一题</button>
+          <button type="button" id="next9">下一题</button>
+      </div>
     </div>
     
     <div id="question10" style="display: none;">
@@ -230,7 +258,10 @@
         <input type="radio" name="q10" value="经常有">经常有<br>
         <input type="radio" name="q10" value="很多">很多<br>
       </p>
-      <button type="button" id="next10">下一题</button>
+      <div class="button-container">
+          <button type="button" id="prev10">上一题</button>
+          <button type="button" id="next10">下一题</button>
+      </div>
     </div>
 
     <div id="question11" style="display: none;">
@@ -242,7 +273,10 @@
         <input type="radio" name="q11" value="经常有">经常有<br>
         <input type="radio" name="q11" value="很多">很多<br>
       </p>
-      <button type="button" id="next11">下一题</button>
+      <div class="button-container">
+          <button type="button" id="prev11">上一题</button>
+          <button type="button" id="next11">下一题</button>
+      </div>
     </div>
 
     <div id="question12" style="display: none;">
@@ -254,7 +288,10 @@
           <input type="radio" name="q12" value="经常有">经常有<br>
           <input type="radio" name="q12" value="很多">很多<br>
         </p>
-        <button type="button" id="next12">下一题</button>
+        <div class="button-container">
+            <button type="button" id="prev12">上一题</button>
+            <button type="button" id="next12">下一题</button>
+        </div>
       </div>
 
       <div id="question13" style="display: none;">
@@ -266,7 +303,10 @@
           <input type="radio" name="q13" value="经常有">经常有<br>
           <input type="radio" name="q13" value="很多">很多<br>
         </p>
-        <button type="button" id="next13">下一题</button>
+        <div class="button-container">
+            <button type="button" id="prev13">上一题</button>
+            <button type="button" id="next13">下一题</button>
+        </div>
       </div>
 
     <div id="question14" style="display: none;">
@@ -278,14 +318,12 @@
         <input type="radio" name="q14" value="经常有">经常有<br>
         <input type="radio" name="q14" value="很多">很多<br>
       </p>
-      <button type="submit" id="submitBtn">提交</button>
+      <div class="button-container">
+          <button type="button" id="prev14">上一题</button>
+          <button type="submit" id="submitBtn">提交</button>
+      </div>
     </div>
   </form>
-      
-  <div id="result">
-    <h2>评估结果</h2>
-    <p id="resultText"></p>
-  </div>
 
   <div id="result">
     <h2>评估结果</h2>
@@ -349,6 +387,68 @@
     document.getElementById('next13').addEventListener('click', () => {
       showNextQuestion('question13', 'question14');
     });
+    document.getElementById('prev2').addEventListener('click', () => {
+    showPreviousQuestion('question2', 'question1');
+    });
+
+    document.getElementById('prev3').addEventListener('click', () => {
+    showPreviousQuestion('question3', 'question2');
+    });
+
+    document.getElementById('prev4').addEventListener('click', () => {
+    showPreviousQuestion('question4', 'question3');
+    });
+
+    document.getElementById('prev5').addEventListener('click', () => {
+    showPreviousQuestion('question5', 'question4');
+    });
+
+    document.getElementById('prev6').addEventListener('click', () => {
+    showPreviousQuestion('question6', 'question5');
+    });
+
+    document.getElementById('prev7').addEventListener('click', () => {
+    showPreviousQuestion('question7', 'question6');
+    });
+
+    document.getElementById('prev8').addEventListener('click', () => {
+    showPreviousQuestion('question8', 'question7');
+    });
+
+    document.getElementById('prev9').addEventListener('click', () => {
+    showPreviousQuestion('question9', 'question8');
+    });
+
+    document.getElementById('prev10').addEventListener('click', () => {
+    showPreviousQuestion('question10', 'question9');
+    });
+
+    document.getElementById('prev11').addEventListener('click', () => {
+    showPreviousQuestion('question11', 'question10');
+    });
+
+    document.getElementById('prev12').addEventListener('click', () => {
+    showPreviousQuestion('question12', 'question11');
+    });
+
+    document.getElementById('prev13').addEventListener('click', () => {
+    showPreviousQuestion('question13', 'question12');
+    });
+
+    document.getElementById('prev14').addEventListener('click', () => {
+    showPreviousQuestion('question14', 'question13');
+    });
+    for (let i = 3; i <= 14; i++) {
+    document.getElementById(`prev${i}`).addEventListener('click', () => {
+        showPreviousQuestion(`question${i}`, `question${i - 1}`);
+    });
+}
+
+function showPreviousQuestion(currentQuestionId, previousQuestionId) {
+    document.getElementById(currentQuestionId).style.display = 'none';
+    document.getElementById(previousQuestionId).style.display = 'block';
+}
+
 
 
     const form = document.querySelector('form');
@@ -555,8 +655,8 @@
       }
   
      
-  
-      resultDiv.style.display = 'block';
+      const resultUrl = `xljg.html?result=${encodeURIComponent(resultText.innerHTML)}`;
+       window.location.href = resultUrl;
     });
     const backButton = document.getElementById('backButton');
    backButton.addEventListener('click', function() {
