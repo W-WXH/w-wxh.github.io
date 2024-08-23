@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./08.jpg">
     <title>登录</title>
     <style>
         * {
@@ -111,10 +112,19 @@
             color: #7597ff;
             font-size: 18px;
         }
+        #backButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    color: rgb(70, 100, 180);
+    font-size: 20px;
+        }
     </style>
 </head>
 
 <body>
+    <a href="#" id="backButton">返回</a>
 
     <div class="shell">
         <h2 class="title">Login</h2>
@@ -161,7 +171,10 @@
         }
 
     });
-
+    const backButton = document.getElementById('backButton');
+   backButton.addEventListener('click', function() {
+       history.back();
+   });
 </script>
 
 </html>

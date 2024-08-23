@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./08.jpg">
   <title>漂流瓶</title>
   <style>
     body {
@@ -14,7 +15,7 @@
     }
 
     h1 {
-      font-size: 80px;
+      font-size: 50px;
       color:  rgb(70, 100, 180);
       text-align: center;
       margin-bottom: 30px;
@@ -24,7 +25,7 @@
     form {
       background-color: rgba(225, 225, 225, 0.01);
       border-radius: 10px;
-      width: 80%;
+      width: 50%;
       padding: 45px;
       align-items: center;
       flex-direction: column;
@@ -35,7 +36,7 @@
     }
 
     label {
-      font-size: 50px;
+      font-size: 30px;
       color: #ffffff;
       margin-bottom: 30px;
       text-shadow: 0 0 10px #2db8cd;
@@ -43,7 +44,7 @@
 
     input[type="text"],
     textarea {
-      font-size: 40px;
+      font-size: 30px;
       width: 100%;
       padding: 50px;
       background-color: rgba(225, 225, 225, 0.01);
@@ -57,7 +58,7 @@
     }
 
     button {
-      font-size: 40px;
+      font-size: 30px;
       padding: 15px 30px;
       background-color: rgba(225, 225, 225, 0.01);
       border-color: #333;
@@ -69,7 +70,7 @@
     }
 
     #receivedBottles {
-      font-size: 50px;
+      font-size: 30px;
       padding: 20px;
       background-color: rgba(225, 225, 225, 0.01);
       border-radius: 10px;
@@ -82,7 +83,7 @@
     }
 
     #mailbox {
-      font-size: 50px;
+      font-size: 30px;
       padding: 20px;
       background-color: rgba(225, 225, 225, 0.01);
       border-radius: 10px;
@@ -97,11 +98,13 @@
     #options {
       display: flex;
       justify-content: space-around;
+      width: 70%;
+      margin: auto;
     }
 
     #options div {
       padding: 10px 20px;
-      font-size: 65px;
+      font-size: 40px;
       font-weight: bold;
       border: 2px solid;
       border-radius:48%;
@@ -120,24 +123,38 @@
       padding: 20px;
       background-color: rgba(225, 225, 225, 0.01);
       border-radius: 10px;
-      font-size: 45px;
+      font-size: 40px;
       font-family: Arial, Helvetica, sans-serif;
       color: rgb(51, 90, 197);
       color: #ffffff;
       margin-bottom: 30px;
       text-shadow: 0 0 10px #7443e5;
+      text-align: center;
     }
     #sendMessageContainer {
     position: relative;
-    left: 60%;
+    left: 70%;
     transform: translateX(-50%);
-}
 
+    }   
+    .window{
+      margin: auto;
+      width: 70%;
+    }
+    #backButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    color: rgb(70, 100, 180);
+    font-size: 20px;
+    }
   </style>
 </head>
 
 <body>
-  <h1>漂流瓶</h1>
+  <a href="#" id="backButton">返回</a>
+  <div class="window">
 
   <div id="options">
     <div onclick="showMailbox()">信箱</div>
@@ -152,7 +169,8 @@
       <button type="submit">发送漂流瓶</button>
     </form>
   </div>
-
+</div>
+<div class="mailtool">
   <div id="receivedBottles">
     随机收到的漂流瓶信息：
   </div>
@@ -160,7 +178,7 @@
   <div id="mailbox">
     信箱中的所有信件内容：
   </div>
-
+</div>
   <div id="chatBox"></div>
 
   <script>
@@ -211,6 +229,10 @@
 
     // 定时模拟接收漂流瓶
     setInterval(receiveBottle, 5000);
+    const backButton = document.getElementById('backButton');
+   backButton.addEventListener('click', function() {
+       history.back();
+   });
   </script>
 </body>
 
